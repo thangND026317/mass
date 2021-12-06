@@ -1,19 +1,22 @@
 .hero-container {
-  /* background: url('/src/static/images/img-home.jpg') center center/cover no-repeat; */
   height: 90vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2); */
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 
-.hero-container > h1,
-h6 {
+.hero-container > h1 {
   color: #fff;
   font-size: 70px;
+  margin-top: -100px;
+}
+
+.hero-container > h6 {
+  color: #fff;
+  font-size: 40px;
   margin-top: -100px;
 }
 
@@ -53,7 +56,7 @@ h6 {
   margin-left: 4px;
 }
 
-.textarea {
+.textarea__question {
   width: 50%;
   height: 150px;
   padding: 12px 20px;
@@ -63,6 +66,19 @@ h6 {
   background-color: #f8f8f8;
   font-size: 16px;
   resize: none;
+}
+
+.textarea__choice {
+  /* width: 100%; */
+  height: 60px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  /* justify-content: left; */
 }
 
 @media screen and (max-width: 960px) {

@@ -7,8 +7,9 @@ import "./HeroSection.css";
 const HeroSection = () => {
   return (
     <div className="hero-container">
-      <h1>GET STARTED</h1>
-      <p>Create new wallet or import your wallet</p>
+      {/* <h1>GET STARTED</h1> */}
+      <p>Have you tired of multiple-choice question?</p>
+      <p>Try our service now</p>
       <div className="hero-btns">
         <Button
           className="btns"
@@ -16,9 +17,10 @@ const HeroSection = () => {
           buttonSize="btn--larger"
           to="/prediction"
         >
-          GET STARTED
+          Get started!
         </Button>
       </div>
+      
     </div>
   );
 };

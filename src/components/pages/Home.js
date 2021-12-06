@@ -1,16 +1,15 @@
 import React from 'react'
+import { SubSection } from '..';
 
-import '../../App.css';
-import Footer from './../Footer/Footer';
+// import '../../App.css';
 import HeroSection from './../HeroSection/HeroSection';
 
 const Home = () => {
-  return (
-    <div>
+  return <div className="home">
       <HeroSection />
-      <Footer />
+
+      {/* <SubSection /> */}
     </div>
-  )
 }
 
 export default Home;

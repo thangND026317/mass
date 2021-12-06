@@ -1,65 +1,30 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./SubSection.css";
-import { Link } from "react-router-dom";
-import Button from "../Button/Button";
 
-function SubSection({
-  lightBg,
-  topLine,
-  lightText,
-  lightTextDesc,
-  headline,
-  description,
-  buttonLabel,
-  img,
-  alt,
-  imgStart,
-}) {
-  return (
-    <>
-      <div
-        className={lightBg ? "home__hero-section" : "home__hero-section darkBg"}
-      >
-        <div className="container">
-          <div
-            className="row home__hero-row"
-            style={{
-              display: "flex",
-              flexDirection: imgStart === "start" ? "row-reverse" : "row",
-            }}
-          >
-            <div className="col">
-              <div className="home__hero-text-wrapper">
-                <div className="top-line">{topLine}</div>
-                <h1 className={lightText ? "heading" : "heading dark"}>
-                  {headline}
-                </h1>
-                <p
-                  className={
-                    lightTextDesc
-                      ? "home__hero-subtitle"
-                      : "home__hero-subtitle dark"
-                  }
-                >
-                  {description}
-                </p>
-                <Link to="/sign-up">
-                  <Button buttonSize="btn--wide" buttonColor="blue">
-                    {buttonLabel}
-                  </Button>
-                </Link>
-              </div>
+const SubSection = () => {
+  return <Fragment>
+    <div className="home__hero-section">
+      <div className="container">
+        <div className="row home__hero-row" style={{ display: "flex", flexDirection: "row" }} >
+          <div className="col">
+            <div className="home__hero-text-wrapper">
+              <h1 className="heading dark">
+                About us
+              </h1>
+              <p className="home__hero-subtitle dark" >
+                {"This is a project for predicting a multiple-choice question using sentiment analysis. We analyze your question based on texts and try to pick the most suitable answer. The model can be correct 60-90% of the time, but you can make it up to 100%. Our mascot is pallas cat, since our system is MASS and, pallas cat’s mass is big for sure :))"}
+              </p>
             </div>
-            <div className="col">
-              <div className="home__hero-img-wrapper">
-                <img src={img} alt={alt} className="home__hero-img" />
-              </div>
+          </div>
+          <div className="col">
+            <div className="home__hero-img-wrapper">
+              <img src="images/pallas.svg" alt="Pallas cat" className="home__hero-img" />
             </div>
           </div>
         </div>
       </div>
-    </>
-  );
+    </div>
+  </Fragment>
 }
 
 export default SubSection;
