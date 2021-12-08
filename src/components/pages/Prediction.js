@@ -68,7 +68,7 @@ const Prediction = () => {
       <Button
         className="btns"
         buttonStyle="btn--outline"
-        buttonSize="btn--large"
+        buttonSize="btn--larger"
         onClick={predict}
       >
         Predict

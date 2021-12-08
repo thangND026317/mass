@@ -6,11 +6,8 @@ import "./HeroSection.css";
 
 const HeroSection = () => {
   return <div className="hero-container homepage container">
-    <h1>MASS</h1>
-    <h6>A multiple-choice answering system</h6>
-    <br />
-    <p>Have you tired of multiple-choice questions?</p>
-    <p>Try our service now!</p>
+    <h1>Have you tired of multiple-choice questions?</h1>
+    <h6>Try our service now!</h6>
     <div className="hero-btns">
       <Button
         className="btns"
