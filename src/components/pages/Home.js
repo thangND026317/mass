@@ -7,8 +7,7 @@ import HeroSection from './../HeroSection/HeroSection';
 const Home = () => {
   return <div className="home">
       <HeroSection />
-
-      {/* <SubSection /> */}
+      <SubSection />
     </div>
 }
 

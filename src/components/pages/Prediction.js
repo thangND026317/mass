@@ -4,7 +4,7 @@ import "../HeroSection/HeroSection.css";
 import "../../App.css";
 import Button from '../Button/Button';
 
-export default function Prediction() {
+const Prediction = () => {
   const [text, setText] = useState("");
   const handleOnChange = (event) => setText(event.target.value);
 
@@ -18,32 +18,31 @@ export default function Prediction() {
         placeholder="Enter your question here"
         value={text}
       />
-      <input
+      <input type="text"
         // className="textarea__choices"
         // onChange={handleOnChange}
         placeholder="First answer"
       />
-      <input
+      <input type="text"
         // className="textarea__choices"
         // onChange={handleOnChange}
         placeholder="Second answer"
       />
-      <input
+      <input type="text"
         // className="textarea__choices"
         // onChange={handleOnChange}
         placeholder="Third answer"
       />
-      <input
+      <input type="text"
         // className="textarea__choices"
         // onChange={handleOnChange}
         placeholder="Fourth answer"
       />
 
-      <label for="cars" style={{ fontSize: "20px" }}>Choose a topic:</label>
-      <select id="cars">
+      <label htmlFor="topics" style={{ fontSize: "20px" }}>Choose a topic:</label>
+      <select id="topics">
         <option value="general-knowledge">General knowledge</option>
         <option value="science">Science</option>
-
       </select>
 
       <Button
@@ -57,3 +56,5 @@ export default function Prediction() {
     </div>
   </div>
 }
+
+export default Prediction;

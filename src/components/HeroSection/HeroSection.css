@@ -1,11 +1,14 @@
 .hero-container {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* object-fit: contain; */
+}
+
+.homepage {
+  background: url("/src/static/images/img-home.jpg") center center/cover;
 }
 
 .hero-container > h1 {

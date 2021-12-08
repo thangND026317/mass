@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return <Fragment>
     <nav className="navbar">
-      <div className="navbar-container">
+      <div className="navbar-container container">
         <Link to="/" className="navbar-logo">
           MASS
           <i className="fab fa-typo3" />

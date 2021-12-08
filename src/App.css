@@ -5,17 +5,7 @@
   font-family: "PT Sans", sans-serif;
 }
 
-.home,
-.prediction {
-  display: flex;
-  height: 90vh;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-}
-
 .home {
-  background-image: url('/src/static/images/img-home.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
