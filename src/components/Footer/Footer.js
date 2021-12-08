@@ -14,7 +14,7 @@ function Footer() {
               <i className='fab fa-typo3' />
             </Link>
           </div>
-          <small className='website-rights'>MASS © 2021</small>
+          <small className='website-rights'>JTP team © 2021</small>
         </div>
       </section>
     </div>

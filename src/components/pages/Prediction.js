@@ -5,11 +5,31 @@ import "../../App.css";
 import Button from '../Button/Button';
 
 const Prediction = () => {
-  const [text, setText] = useState("");
-  const handleOnChange = (event) => setText(event.target.value);
 
-  return <div className="prediction">
-    <div className="hero-container">
+  // onClick predict, set predicting === true, change to result page
+  // (predicting && loading) === true: running model, wait for results
+  // (predicting && !loading) === true: model finished, display results
+  const [predicting, setPredicting] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const predict = async () => {
+    try {
+      setPredicting(true);
+      setLoading(true);
+      const result = await fetch("https://api.example.com/items");
+      setLoading(false);
+      console.log("Prediction done, result: ", result);
+    } catch (error) {
+      setLoading(false);
+      console.log("An error occurred in predicting: ", error);
+    }
+  }
+
+  const PredictionData = () => {
+    const [text, setText] = useState("");
+    const handleOnChange = (event) => setText(event.target.value);
+
+    return <div className="hero-container">
       <h6>PREDICTION</h6>
       <br />
       <textarea
@@ -49,11 +69,22 @@ const Prediction = () => {
         className="btns"
         buttonStyle="btn--outline"
         buttonSize="btn--large"
-        to="/result"
+        onClick={predict}
       >
         Predict
       </Button>
     </div>
+  }
+
+  const PredictionResult = () => {
+    return <div className="hero-container">
+      <h6>RESULT</h6>
+      <br />
+    </div>
+  }
+
+  return <div className="prediction">
+    {!predicting ? <PredictionData /> : <PredictionResult />}
   </div>
 }
 
