@@ -8,18 +8,15 @@
 }
 
 .homepage {
-  background: url("/src/static/images/img-home.jpg") center center/cover;
+  background-image: url("/src/static/images/img-home.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero-container > h1 {
   color: #fff;
   font-size: 70px;
-  margin-top: -100px;
-}
-
-.hero-container > h6 {
-  color: #fff;
-  font-size: 40px;
   margin-top: -100px;
 }
 
@@ -31,32 +28,12 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-.hero-container > ul {
-  margin-top: 8px;
-  color: #fff;
-  font-size: 24px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
-.hero-container > li {
-  margin-top: 8px;
-  color: #fff;
-  font-size: 14px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
 .hero-btns {
   margin-top: 32px;
 }
 
 .hero-btns .btn {
   margin: 6px;
-}
-
-.fa-play-circle {
-  margin-left: 4px;
 }
 
 .textarea__question {
@@ -96,14 +73,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .hero-container > h1,
-  h2,
-  h6 {
+  .hero-container > h1 {
     font-size: 50px;
     margin-top: -100px;
   }
 
   .hero-container > p {
+    margin-top: 8px;
     font-size: 30px;
   }
 
