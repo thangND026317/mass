@@ -14,7 +14,7 @@ const Prediction = () => {
   const [loading, setLoading] = useState(true);
   const [result, setResult] = useState({});
 
-  const predict = async (choice0, choice1, choice2, choice3) => {
+  const predict = async (question, choice0, choice1, choice2, choice3) => {
     try {
       setPredicting(true);
       setLoading(true);
@@ -24,16 +24,16 @@ const Prediction = () => {
         answer_2: choice2,
         answer_3: choice3
       })
-      // const url = `http://localhost:8080/mass?question=${question}&choice0=${choice0}&choice1=${choice1}&choice2=${choice2}&choice3=${choice3}`
-      // const response = await fetch(url);
-      // const results = await response.json();
-      const mockJson = {
-        answer_0: 0.06,
-        answer_1: 0.03,
-        answer_2: 0.90,
-        answer_3: 0.01
-      };
-      const parsedData = Object.entries(mockJson).map(([answer, accuracy]) => {
+      const url = `http://localhost:8080/mass?question=${question}&choice0=${choice0}&choice1=${choice1}&choice2=${choice2}&choice3=${choice3}`
+      const response = await fetch(url);
+      const results = await response.json();
+      // const mockJson = {
+      //   answer_0: 0.06,
+      //   answer_1: 0.03,
+      //   answer_2: 0.90,
+      //   answer_3: 0.01
+      // };
+      const parsedData = Object.entries(results).map(([answer, accuracy]) => {
         return { answer: answer, accuracy: accuracy }
       });
 
@@ -94,7 +94,7 @@ const Prediction = () => {
         className="btns"
         buttonStyle="btn--outline"
         buttonSize="btn--larger"
-        onClick={() => predict(choice0, choice1, choice2, choice3)}
+        onClick={() => predict(question, choice0, choice1, choice2, choice3)}
       >
         Predict
       </Button>
