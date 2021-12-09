@@ -11,7 +11,6 @@ function Footer() {
           <div className='footer-logo'>
             <Link to='/' className='social-logo'>
               MASS
-              <i className='fab fa-typo3' />
             </Link>
           </div>
           <small className='website-rights'>JTP team © 2021</small>

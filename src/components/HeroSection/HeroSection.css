@@ -7,6 +7,14 @@
   align-items: center;
 }
 
+.hero-container-other {
+  display: flex;
+  height: 86vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .homepage {
   background: url("/src/static/images/img-home.jpg") center center/cover
     no-repeat;
@@ -34,7 +42,7 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-.hero-container > h1, h6, p {
+.hero-container > h1, h6{
   text-shadow: 0px 5px 5px #242424, 0px 0px 5px #242424;
 }
 
@@ -53,7 +61,7 @@
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: #f8f8f8;
+  background-color: #E5E5E5;
   font-size: 16px;
   resize: none;
 }
@@ -65,7 +73,7 @@
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: #f8f8f8;
+  background-color: #E5E5E5;
   font-size: 16px;
   resize: none;
   /* justify-content: left; */

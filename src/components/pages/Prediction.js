@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../HeroSection/HeroSection.css";
+import Loading from "./Loading";
 
 import "../../App.css";
 import Button from '../Button/Button';
@@ -16,9 +17,9 @@ const Prediction = () => {
     try {
       setPredicting(true);
       setLoading(true);
-      const result = await fetch("https://api.example.com/items");
-      setLoading(false);
-      console.log("Prediction done, result: ", result);
+      // const result = await fetch("https://api.example.com/items");
+      // setLoading(false);
+      // console.log("Prediction done, result: ", result);
     } catch (error) {
       setLoading(false);
       console.log("An error occurred in predicting: ", error);
@@ -29,7 +30,7 @@ const Prediction = () => {
     const [text, setText] = useState("");
     const handleOnChange = (event) => setText(event.target.value);
 
-    return <div className="hero-container">
+    return <div className="hero-container-other">
       <h6>PREDICTION</h6>
       <br />
       <textarea
@@ -77,8 +78,8 @@ const Prediction = () => {
   }
 
   const PredictionResult = () => {
-    return <div className="hero-container">
-      <h6>RESULT</h6>
+    return <div className="hero-container-other">
+      {loading ? <Loading /> : <h6>Result</h6>}
       <br />
     </div>
   }
