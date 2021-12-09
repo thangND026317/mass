@@ -12,14 +12,23 @@ const Prediction = () => {
   // (predicting && !loading) === true: model finished, display results
   const [predicting, setPredicting] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [result, setResult] = useState({});
 
   const predict = async () => {
     try {
       setPredicting(true);
       setLoading(true);
-      // const result = await fetch("https://api.example.com/items");
-      // setLoading(false);
-      // console.log("Prediction done, result: ", result);
+      // const response = await fetch("https://api.example.com/items");
+      // const results = await response.json();
+      const mockJson = {
+        answer_0: 0.90,
+        answer_1: 0.06,
+        answer_2: 0.03,
+        answer_3: 0.01
+      };
+      const mockResult = Object.entries(mockJson).map(([answer, accuracy]) => accuracy);
+      setResult(mockResult);
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       console.log("An error occurred in predicting: ", error);
@@ -79,8 +88,15 @@ const Prediction = () => {
 
   const PredictionResult = () => {
     return <div className="hero-container-other">
-      {loading ? <Loading /> : <h6>Result</h6>}
-      <br />
+      <div className="container">
+        {loading ? <Loading /> :
+          <div>
+            <h6>Result</h6>
+            {result.map((r, index) => <p>Answer {index + 1}: {r}</p>)}
+          </div>
+        }
+        <br />
+      </div>
     </div>
   }
 
