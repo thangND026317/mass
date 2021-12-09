@@ -8,8 +8,8 @@
 }
 
 .hero-container-other {
-  display: flex;
   height: 86vh;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
