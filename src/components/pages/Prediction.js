@@ -24,15 +24,12 @@ const Prediction = () => {
         answer_2: choice2,
         answer_3: choice3
       })
+
+      // API call
       const url = `http://localhost:8080/mass?question=${question}&choice0=${choice0}&choice1=${choice1}&choice2=${choice2}&choice3=${choice3}`
       const response = await fetch(url);
       const results = await response.json();
-      // const mockJson = {
-      //   answer_0: 0.06,
-      //   answer_1: 0.03,
-      //   answer_2: 0.90,
-      //   answer_3: 0.01
-      // };
+
       const parsedData = Object.entries(results).map(([answer, accuracy]) => {
         return { 
           answer: answer, 
@@ -40,7 +37,6 @@ const Prediction = () => {
         }
       });
       const sortedData = parsedData.sort((current, next) => next.accuracy - current.accuracy);
-      console.log(sortedData);
 
       setResult(sortedData[0]);
       setLoading(false);
@@ -57,7 +53,6 @@ const Prediction = () => {
     const [choice2, setChoice2] = useState("");
     const [choice3, setChoice3] = useState("");
 
-    // const handleOnChange = (e) => setQuestion(e.target.value);
     return <div className="hero-container-other">
       <h6>PREDICTION</h6>
       <br />
@@ -109,8 +104,8 @@ const Prediction = () => {
     return <Fragment>
       {loading ? <Loading /> :
         <div className="hero-container-other">
-          <h6>You should choose {answers[result.answer]}</h6>
-          <h6>Accuracy: {result.accuracy} %</h6>
+          <h6>You should choose: {answers[result.answer]}</h6>
+          <h6>Accuracy: {(Number(result.accuracy) * 100).toFixed(2)} %</h6>
           <Button
             className="btns"
             buttonStyle="btn--outline"
