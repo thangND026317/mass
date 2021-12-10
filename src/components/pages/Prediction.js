@@ -34,10 +34,14 @@ const Prediction = () => {
       //   answer_3: 0.01
       // };
       const parsedData = Object.entries(results).map(([answer, accuracy]) => {
-        return { answer: answer, accuracy: accuracy }
+        return { 
+          answer: answer, 
+          accuracy: Math.round(parseFloat(accuracy) * 100) 
+        }
       });
-
       const sortedData = parsedData.sort((current, next) => next.accuracy - current.accuracy);
+      console.log(sortedData);
+
       setResult(sortedData[0]);
       setLoading(false);
     } catch (error) {
@@ -106,7 +110,7 @@ const Prediction = () => {
       {loading ? <Loading /> :
         <div className="hero-container-other">
           <h6>You should choose {answers[result.answer]}</h6>
-          <h6>Accuracy: {result.accuracy}</h6>
+          <h6>Accuracy: {result.accuracy} %</h6>
           <Button
             className="btns"
             buttonStyle="btn--outline"
