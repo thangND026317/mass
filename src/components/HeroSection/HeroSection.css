@@ -64,11 +64,12 @@
   background-color: #E5E5E5;
   font-size: 16px;
   resize: none;
+  margin-bottom: 20px;
 }
 
-.textarea__choice {
-  /* width: 100%; */
-  height: 60px;
+.input__choice {
+  height: 30px;
+  width: 30%;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -76,7 +77,17 @@
   background-color: #E5E5E5;
   font-size: 16px;
   resize: none;
-  /* justify-content: left; */
+  margin-bottom: 20px;
+}
+
+.input__topic {
+  height: 20px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 960px) {

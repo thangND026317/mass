@@ -31,9 +31,9 @@ const Prediction = () => {
       const results = await response.json();
 
       const parsedData = Object.entries(results).map(([answer, accuracy]) => {
-        return { 
-          answer: answer, 
-          accuracy: Math.round(parseFloat(accuracy) * 100) 
+        return {
+          answer: answer,
+          accuracy: Math.round(parseFloat(accuracy) * 100)
         }
       });
       const sortedData = parsedData.sort((current, next) => next.accuracy - current.accuracy);
@@ -62,29 +62,29 @@ const Prediction = () => {
         placeholder="Enter your question here"
         value={question}
       />
-      <input type="text"
+      <input type="text" className="input__choice"
         placeholder="First choice"
         onChange={e => setChoice0(e.target.value)}
         value={choice0}
       />
-      <input type="text"
+      <input type="text" className="input__choice"
         placeholder="Second choice"
         onChange={e => setChoice1(e.target.value)}
         value={choice1}
       />
-      <input type="text"
+      <input type="text" className="input__choice"
         placeholder="Third choice"
         onChange={e => setChoice2(e.target.value)}
         value={choice2}
       />
-      <input type="text"
+      <input type="text" className="input__choice"
         placeholder="Fourth choice"
         onChange={e => setChoice3(e.target.value)}
         value={choice3}
       />
 
-      <label htmlFor="topics" style={{ fontSize: "20px" }}>Choose a topic:</label>
-      <select id="topics">
+      <label htmlFor="topics" style={{ fontSize: "20px", color: "black" }}>Choose a topic:</label>
+      <select id="topics" style={{ fontSize: "16px", height: "30px", width: "20%",margin: "12px 20px", borderRadius: "5px" }}>
         <option value="general-knowledge">General knowledge</option>
         <option value="science">Science</option>
       </select>
