@@ -33,7 +33,7 @@ const Prediction = () => {
       const parsedData = Object.entries(results).map(([answer, accuracy]) => {
         return {
           answer: answer,
-          accuracy: Math.round(parseFloat(accuracy) * 100)
+          accuracy: accuracy
         }
       });
       const sortedData = parsedData.sort((current, next) => next.accuracy - current.accuracy);
