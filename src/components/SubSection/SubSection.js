@@ -12,6 +12,9 @@ const SubSection = () => {
                 About us
               </h1>
               <p className="home__hero-subtitle dark" >
+                {"MASS - Multiple-choice AnSwering System"}
+              </p>
+              <p className="home__hero-subtitle dark" >
                 {"This is a project for predicting a multiple-choice question using sentiment analysis. We analyze your question based on texts and try to pick the most suitable answer. The model can be correct 60-90% of the time, but you can make it up to 100%. Our mascot is pallas cat, since our system is MASS and, pallas cat’s mass is big for sure :))"}
               </p>
             </div>

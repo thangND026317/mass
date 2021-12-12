@@ -55,14 +55,14 @@
 }
 
 .textarea__question {
-  width: 50%;
+  width: 60%;
   height: 150px;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
   background-color: #E5E5E5;
-  font-size: 16px;
+  font-size: 20px;
   resize: none;
   margin-bottom: 20px;
 }
